@@ -21,9 +21,9 @@ body {
     <div className="App">
       <GlobalStyle />
       <Reset />
-      <BrowserRouter>
-        <Route path="/" exact component={Hompage} />
-        <Route path={props.postpage} exact component={Postpage} />
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Route exact path="/" component={Hompage} />
+        <Route path={props.postpage} component={Postpage} />
       </BrowserRouter>
     </div>
   );
