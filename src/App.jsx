@@ -1,11 +1,9 @@
-import { Reset } from 'styled-reset';
-import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter, Route} from 'react-router-dom';
-import './App.css';
-import Hompage from './pages/Hompage/Hompage';
-import Postpage from './pages/Postpage/Postpage'
-import NotFound from './pages/NotFound/NotFound';
-import data from './DB/data';
+import { Reset } from "styled-reset";
+import { createGlobalStyle } from "styled-components";
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.css";
+import Hompage from "./pages/Hompage/Hompage";
+import Postpage from "./pages/Postpage/Postpage";
 
 function App(props) {
   const GlobalStyle = createGlobalStyle`
@@ -17,16 +15,15 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
 }
-`
+`;
 
   return (
     <div className="App">
-      <GlobalStyle/>
-      <Reset/>
+      <GlobalStyle />
+      <Reset />
       <BrowserRouter>
-          <Route path="/" exact component={Hompage}/>
-          <Route path={props.postpage} exact component={Postpage}/>
-          {/* <Route path="*"  exact component={NotFound}></Route> */}
+        <Route path="/" exact component={Hompage} />
+        <Route path={props.postpage} exact component={Postpage} />
       </BrowserRouter>
     </div>
   );
